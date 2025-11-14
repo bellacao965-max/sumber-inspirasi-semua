@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sumber Inspirasi — AI Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="/logo.png" class="logo" alt="logo" onerror="this.style.display='none'" />
+      <h1>Sumber Inspirasi</h1>
+    </header>
+
+    <main class="grid">
+      <!-- LEFT COLUMN -->
+      <section class="left">
+        <!-- Google mini search -->
+        <div class="card">
+          <label>Google mini</label>
+          <form id="googleForm" action="https://www.google.com/search" method="GET" target="_blank">
+            <input name="q" id="googleInput" placeholder="Cari di Google..." />
+            <button type="submit" class="btn">Cari</button>
+          </form>
+        </div>
+
+        <!-- AI Chat -->
+        <div class="card">
+          <label>Mesin AI (GPT-4 Turbo)</label>
+          <div id="chatBox" class="chatBox"></div>
+          <form id="chatForm">
+            <input id="chatInput" placeholder="Tanya sesuatu..." autocomplete="off" />
+            <button class="btn" type="submit">Kirim</button>
+          </form>
+        </div>
+
+        <!-- Quotes -->
+        <div class="card quoteCard">
+          <label>Quotes Inspirasi</label>
+          <div id="quoteText" class="quoteText">Memuat...</div>
+          <button id="nextQuote" class="btn small">Quote Baru</button>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="right">
+        <!-- YouTube mini player -->
+        <div class="card videoCard">
+          <div class="videoHeader">
+            <label>YouTube Mini</label>
+            <div class="videoControls">
+              <input id="ytSearch" placeholder="Cari video atau paste URL/ID..." />
+              <button id="ytSearchBtn" class="btn">Cari</button>
+            </div>
+          </div>
+
+          <div class="playerWrap">
+            <iframe id="ytPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <div id="ytResults" class="ytResults"></div>
+        </div>
+
+        <!-- Social embeds: TikTok & Instagram -->
+        <div class="card socialCard">
+          <label>Media Sosial</label>
+          <div class="socialRow">
+            <div class="socialCol">
+              <small>TikTok (paste URL)</small>
+              <input id="tiktokUrl" placeholder="https://www.tiktok.com/..." />
+              <button id="loadTiktok" class="btn small">Load</button>
+              <div id="tiktokEmbed" class="embed"></div>
+            </div>
+            <div class="socialCol">
+              <small>Instagram (post URL)</small>
+              <input id="instaUrl" placeholder="https://www.instagram.com/p/..." />
+              <button id="loadInsta" class="btn small">Load</button>
+              <div id="instaEmbed" class="embed"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Made with ❤️ — AI powered by GPT-4 Turbo</footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
